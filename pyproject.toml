@@ -1,0 +1,24 @@
+[project]
+name = "agentic-ai-runtime"
+version = "1.0.0"
+description = "Production-grade, resilient autonomous AI agent runtime with multi-provider fallback, tool-calling loop, and real-time token/cost telemetry."
+authors = [{ name = "Nexus & AI Engineering", email = "engineer@starl1n.dev" }]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "pydantic>=2.10.0",
+    "httpx>=0.28.0",
+    "python-dotenv>=1.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+asyncio_mode = "auto"
